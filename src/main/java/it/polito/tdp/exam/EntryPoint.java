@@ -1,22 +1,28 @@
 package it.polito.tdp.exam;
 
+import it.polito.tdp.exam.model.Model;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import jdk.internal.icu.text.NormalizerBase;
 
 
 public class EntryPoint extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
-        
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add("/styles/Styles.css");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Scene.fxml"));
 
-        stage.setTitle("JavaFX and Maven");
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+
+        Model model = new Model();
+        FXMLController controller = loader.getController();
+        controller.setModel(model);
+
+        stage.setTitle("2023-05-30-esame");
         stage.setScene(scene);
         stage.show();
     }
