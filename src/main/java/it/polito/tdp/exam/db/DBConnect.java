@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
+
 public class DBConnect {
 
 	private static final String jdbcURL = "jdbc:mariadb://localhost/lahmansbaseballdb";
@@ -18,7 +19,7 @@ public class DBConnect {
 			HikariConfig config = new HikariConfig();
 			config.setJdbcUrl(jdbcURL);
 			config.setUsername("root");
-			config.setPassword("****");
+			config.setPassword("root");
 			
 			// configurazione MySQL
 			config.addDataSourceProperty("cachePrepStmts", "true");
