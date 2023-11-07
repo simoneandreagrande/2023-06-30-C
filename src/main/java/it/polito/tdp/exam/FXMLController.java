@@ -76,6 +76,9 @@ public class FXMLController {
 
     @FXML
     void handleDettagli(ActionEvent event) {
+    	
+    	
+    	// metodo per dettagli
 
     	Integer anno = this.cmbAnno.getValue();
     	if (anno == null) {
